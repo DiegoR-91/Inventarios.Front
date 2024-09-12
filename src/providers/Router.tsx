@@ -11,6 +11,15 @@ const HomePage = lazy(() => import("@/pages/Home/Home"));
 const InventarioMermasPage = lazy(
   () => import("@/pages/Inventarios/InventarioMermas/InventarioMermas")
 );
+const MantencionCartolasPage = lazy(
+  () => import("@/pages/Inventarios/MantencionCartolas/MantencionCartolas")
+);
+const ProductosExcluidosPage = lazy(
+  () => import("@/pages/Administracion/ProductosExcluidos/ProductosExcluidos")
+);
+const NovedadesPage = lazy(
+  () => import("@/pages/Administracion/Novedades/Novedades")
+);
 
 const Router = () => {
   return (
@@ -18,6 +27,7 @@ const Router = () => {
       <main className="min-h-screen flex w-full">
         <Suspense fallback={<Loading size="md" color="success" />}>
           <Routes>
+            <Route path="/" element={<LoginPage />} />
             <Route
               path="/login"
               index
@@ -28,6 +38,7 @@ const Router = () => {
               index
               element={<LayoutFull children={<HomePage />} />}
             />
+            {/* MODULO INVENTARIOS */}
             <Route
               path="/inventarios-mermas"
               index
@@ -39,6 +50,39 @@ const Router = () => {
                 />
               }
             />
+            <Route
+              path="/mantencion-cartolas"
+              index
+              element={
+                <LayoutFull
+                  children={
+                    <ModulesContainer children={<MantencionCartolasPage />} />
+                  }
+                />
+              }
+            />
+            {/* MODULO ADMINISTRACION */}
+            <Route
+              path="/productos-excluidos"
+              index
+              element={
+                <LayoutFull
+                  children={
+                    <ModulesContainer children={<ProductosExcluidosPage />} />
+                  }
+                />
+              }
+            />
+            <Route
+              path="/novedades"
+              index
+              element={
+                <LayoutFull
+                  children={<ModulesContainer children={<NovedadesPage />} />}
+                />
+              }
+            />
+            {/* MODULO PROCESOS */}
           </Routes>
         </Suspense>
       </main>

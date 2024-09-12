@@ -26,8 +26,9 @@ export const Sidebar = () => {
               </button>
               <div className="flex ml-auto">
                 <IoMdArrowDropdown
-                  className="text-greenSecondaryButton"
+                  className="text-greenSecondaryButton hover:cursor-pointer"
                   size={20}
+                  onClick={() => toggleMenu(index)}
                 />
               </div>
             </div>

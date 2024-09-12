@@ -1,18 +1,18 @@
 import { keepPreviousData, useQuery } from "@tanstack/react-query";
 import { ColumnSort, SortingState } from "@tanstack/react-table";
 import { QueryPaginatedProps } from "@/interfaces/commons";
-import { mermasDataMock } from "@/utils/dataMock";
+import { productosExcluidosDataMock } from "@/utils/dataMock";
 
-interface IGetMermas extends QueryPaginatedProps {
+interface IGetProductosExcluidos extends QueryPaginatedProps {
   filters?: any;
 }
 
-export const getInventarioMermas = async ({
+export const getProductosExcluidos = async ({
   page,
   cantidadRegistros,
   sorting,
   filters,
-}: IGetMermas) => {
+}: IGetProductosExcluidos) => {
   /*   const res = await instanceApi.get<IRecentsApplicationsListApi>(
     `/Formulario/ListarSolicitudes`,
     {
@@ -25,7 +25,7 @@ export const getInventarioMermas = async ({
   );
 
   const data = recentApplicationsAdapter(res.data.lista); */
-  const data = mermasDataMock;
+  const data = productosExcluidosDataMock;
 
   if (sorting.length) {
     const sort = sorting[0] as ColumnSort;
@@ -57,7 +57,7 @@ export const getInventarioMermas = async ({
   return usersList;
 };
 
-const useGetInventarioMermas = (
+const useGetProductosExcluidos = (
   sorting: SortingState,
   pagination: { pageIndex: number; pageSize: number },
   cantidadRegistros: number,
@@ -65,14 +65,14 @@ const useGetInventarioMermas = (
 ) => {
   return useQuery({
     queryKey: [
-      "inventarioMermas",
+      "users",
       sorting,
       pagination.pageIndex,
       cantidadRegistros,
       filters,
     ],
     queryFn: async () => {
-      const fetchedData = await getInventarioMermas({
+      const fetchedData = await getProductosExcluidos({
         page: pagination.pageIndex,
         cantidadRegistros,
         sorting,
@@ -86,4 +86,4 @@ const useGetInventarioMermas = (
   });
 };
 
-export default useGetInventarioMermas;
+export default useGetProductosExcluidos;

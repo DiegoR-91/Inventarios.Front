@@ -96,3 +96,99 @@ export const mermasDataMock = [
     m3VolTotal: "100",
   },
 ];
+
+export const productosExcluidosDataMock = [
+  {
+    code: "123456",
+    productName: "Producto 1",
+  },
+  {
+    code: "123456",
+    productName: "Producto 1",
+  },
+  {
+    code: "123456",
+    productName: "Producto 1",
+  },
+  {
+    code: "123456",
+    productName: "Producto 1",
+  },
+  {
+    code: "123456",
+    productName: "Producto 1",
+  },
+  {
+    code: "123456",
+    productName: "Producto 1",
+  },
+  {
+    code: "123456",
+    productName: "Producto 1",
+  },
+  {
+    code: "123456",
+    productName: "Producto 1",
+  },
+  {
+    code: "123456",
+    productName: "Producto 1",
+  },
+  {
+    code: "123456",
+    productName: "Producto 1",
+  },
+];
+
+export const novedadesDataMock = [
+  {
+    code: "123456",
+    glosa: "Novedad 1",
+    error: "Advertencia",
+  },
+  {
+    code: "123456",
+    glosa: "Novedad 1",
+    error: "Advertencia",
+  },
+  {
+    code: "123456",
+    glosa: "Novedad 1",
+    error: "Advertencia",
+  },
+  {
+    code: "123456",
+    glosa: "Novedad 1",
+    error: "Advertencia",
+  },
+  {
+    code: "123456",
+    glosa: "Novedad 1",
+    error: "Advertencia",
+  },
+  {
+    code: "123456",
+    glosa: "Novedad 1",
+    error: "Advertencia",
+  },
+  {
+    code: "123456",
+    glosa: "Novedad 1",
+    error: "Advertencia",
+  },
+  {
+    code: "123456",
+    glosa: "Novedad 1",
+    error: "Advertencia",
+  },
+  {
+    code: "123456",
+    glosa: "Novedad 1",
+    error: "Advertencia",
+  },
+  {
+    code: "123456",
+    glosa: "Novedad 1",
+    error: "Advertencia",
+  },
+];

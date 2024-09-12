@@ -3,16 +3,16 @@ import { ColumnSort, SortingState } from "@tanstack/react-table";
 import { QueryPaginatedProps } from "@/interfaces/commons";
 import { mermasDataMock } from "@/utils/dataMock";
 
-interface IGetMermas extends QueryPaginatedProps {
+interface IGetCartolas extends QueryPaginatedProps {
   filters?: any;
 }
 
-export const getInventarioMermas = async ({
+export const getMantencionCartolas = async ({
   page,
   cantidadRegistros,
   sorting,
   filters,
-}: IGetMermas) => {
+}: IGetCartolas) => {
   /*   const res = await instanceApi.get<IRecentsApplicationsListApi>(
     `/Formulario/ListarSolicitudes`,
     {
@@ -57,7 +57,7 @@ export const getInventarioMermas = async ({
   return usersList;
 };
 
-const useGetInventarioMermas = (
+const useGetMantencionCartolas = (
   sorting: SortingState,
   pagination: { pageIndex: number; pageSize: number },
   cantidadRegistros: number,
@@ -65,14 +65,14 @@ const useGetInventarioMermas = (
 ) => {
   return useQuery({
     queryKey: [
-      "inventarioMermas",
+      "mantencionCartolas",
       sorting,
       pagination.pageIndex,
       cantidadRegistros,
       filters,
     ],
     queryFn: async () => {
-      const fetchedData = await getInventarioMermas({
+      const fetchedData = await getMantencionCartolas({
         page: pagination.pageIndex,
         cantidadRegistros,
         sorting,
@@ -86,4 +86,4 @@ const useGetInventarioMermas = (
   });
 };
 
-export default useGetInventarioMermas;
+export default useGetMantencionCartolas;

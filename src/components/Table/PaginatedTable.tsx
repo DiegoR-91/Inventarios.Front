@@ -54,7 +54,7 @@ const PaginatedTable = <T,>({
 
   return (
     <div className="flex w-full min-h-full">
-      <div className="flex flex-col bg-white m-4 p-4 rounded-md">
+      <div className="flex flex-col bg-white p-4 rounded-md">
         <table className="w-full table-fixed">
           <thead className="bg-white h-10 rounded-lg justify-center text-black/70 text-small">
             {table.getHeaderGroups().map((headerGroup) => (
@@ -99,14 +99,14 @@ const PaginatedTable = <T,>({
                   key={row.id}
                   className={cn(
                     "border-b-2  border-black/5",
-                    activeRow === index ? "bg-greenActiveRowTable/50" : ""
+                    activeRow === index ? "bg-greenBgSideItem" : ""
                   )}
                   onMouseEnter={() => handleMouseEnter(index)}
                   onMouseLeave={handleMouseLeave}
                 >
                   {row.getVisibleCells().map((cell) => {
                     return (
-                      <td key={cell.id} className="py-4 px-1">
+                      <td key={cell.id} className="py-3 px-1">
                         {flexRender(
                           cell.column.columnDef.cell,
                           cell.getContext()
