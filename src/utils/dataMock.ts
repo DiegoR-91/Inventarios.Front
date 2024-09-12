@@ -192,3 +192,126 @@ export const novedadesDataMock = [
     error: "Advertencia",
   },
 ];
+
+/* Procesos */
+/* Conciliacion */
+export const inventariosDataMock = [
+  {
+    court: "Cancha 1",
+    inventoryDate: "2021-09-01 2021-09-01",
+    type: "Tipo 1",
+    detail: "Detalle Inventario 1",
+  },
+  {
+    court: "Cancha 1",
+    inventoryDate: "2021-09-01 2021-09-01",
+    type: "Tipo 1",
+    detail: "Detalle Inventario 1",
+  },
+  {
+    court: "Cancha 1",
+    inventoryDate: "2021-09-01 2021-09-01",
+    type: "Tipo 1",
+    detail: "Detalle Inventario 1",
+  },
+  {
+    court: "Cancha 1",
+    inventoryDate: "2021-09-01 2021-09-01",
+    type: "Tipo 1",
+    detail: "Detalle Inventario 1",
+  },
+  {
+    court: "Cancha 1",
+    inventoryDate: "2021-09-01 2021-09-01",
+    type: "Tipo 1",
+    detail: "Detalle Inventario 1",
+  },
+  {
+    court: "Cancha 1",
+    inventoryDate: "2021-09-01 2021-09-01",
+    type: "Tipo 1",
+    detail: "Detalle Inventario 1",
+  },
+  {
+    court: "Cancha 1",
+    inventoryDate: "2021-09-01 2021-09-01",
+    type: "Tipo 1",
+    detail: "Detalle Inventario 1",
+  },
+  {
+    court: "Cancha 1",
+    inventoryDate: "2021-09-01 2021-09-01",
+    type: "Tipo 1",
+    detail: "Detalle Inventario 1",
+  },
+  {
+    court: "Cancha 1",
+    inventoryDate: "2021-09-01 2021-09-01",
+    type: "Tipo 1",
+    detail: "Detalle Inventario 1",
+  },
+  {
+    court: "Cancha 1",
+    inventoryDate: "2021-09-01 2021-09-01",
+    type: "Tipo 1",
+    detail: "Detalle Inventario 1",
+  },
+  {
+    court: "Cancha 1",
+    inventoryDate: "2021-09-01 2021-09-01",
+    type: "Tipo 1",
+    detail: "Detalle Inventario 1",
+  },
+];
+export const detalleInventariosDataMock = [
+  {
+    invenoryNumber: "10",
+    group: "Cuarilla 1",
+    contractor: "Contratista 1",
+    labor: "Faena 1",
+    EEPP: "EE-PP 1",
+    volMR: "100",
+    volM3: "100",
+    observation: "Observación 1",
+  },
+  {
+    invenoryNumber: "10",
+    group: "Cuarilla 1",
+    contractor: "Contratista 1",
+    labor: "Faena 1",
+    EEPP: "EE-PP 1",
+    volMR: "100",
+    volM3: "100",
+    observation: "Observación 1",
+  },
+  {
+    invenoryNumber: "10",
+    group: "Cuarilla 1",
+    contractor: "Contratista 1",
+    labor: "Faena 1",
+    EEPP: "EE-PP 1",
+    volMR: "100",
+    volM3: "100",
+    observation: "Observación 1",
+  },
+  {
+    invenoryNumber: "10",
+    group: "Cuarilla 1",
+    contractor: "Contratista 1",
+    labor: "Faena 1",
+    EEPP: "EE-PP 1",
+    volMR: "100",
+    volM3: "100",
+    observation: "Observación 1",
+  },
+  {
+    invenoryNumber: "10",
+    group: "Cuarilla 1",
+    contractor: "Contratista 1",
+    labor: "Faena 1",
+    EEPP: "EE-PP 1",
+    volMR: "100",
+    volM3: "100",
+    observation: "Observación 1",
+  },
+];

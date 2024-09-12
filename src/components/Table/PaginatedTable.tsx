@@ -129,6 +129,7 @@ const PaginatedTable = <T,>({
               table.setPageIndex(page);
             }}
             classNames={{ cursor: "bg-greenButton" }}
+            size="sm"
           />
           <div className="flex">
             <span>Filas por página:</span>

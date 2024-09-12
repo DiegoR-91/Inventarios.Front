@@ -13,7 +13,9 @@ const LayoutFull = ({ children }: { children: ReactNode }) => {
           <Sidebar />
         </div>
       </div>
-      <div className="flex w-full h-full p-10">{children}</div>
+      <div className="flex w-full h-full scrollable-content max-h-screen overflow-y-auto p-10">
+        {children}
+      </div>
     </div>
   );
 };

@@ -20,6 +20,9 @@ const ProductosExcluidosPage = lazy(
 const NovedadesPage = lazy(
   () => import("@/pages/Administracion/Novedades/Novedades")
 );
+const ConciliacionPage = lazy(
+  () => import("@/pages/Procesos/Conciliacion/Conciliacion")
+);
 
 const Router = () => {
   return (
@@ -83,6 +86,17 @@ const Router = () => {
               }
             />
             {/* MODULO PROCESOS */}
+            <Route
+              path="/conciliacion"
+              index
+              element={
+                <LayoutFull
+                  children={
+                    <ModulesContainer children={<ConciliacionPage />} />
+                  }
+                />
+              }
+            />
           </Routes>
         </Suspense>
       </main>
