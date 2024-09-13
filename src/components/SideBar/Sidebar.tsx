@@ -2,8 +2,11 @@ import { useState } from "react";
 import { sidebarItems } from "@/constants/sidebarItems";
 import { IoMdArrowDropdown } from "react-icons/io";
 import LogoCMPC from "@/assets/images/LogoCMPC.png";
+import { Link, useLocation } from "react-router-dom";
+import { cn } from "@/utils/cn";
 
 export const Sidebar = () => {
+  const location = useLocation();
   const [openMenu, setOpenMenu] = useState<number | null>(null);
 
   const toggleMenu = (index: number | null) => {
@@ -35,13 +38,16 @@ export const Sidebar = () => {
             {openMenu === index && (
               <div className="ml-4 bg-greenBgSideItem">
                 {item.subMenu.map((subItem, subIndex) => (
-                  <a
+                  <Link
                     key={subIndex}
-                    href={subItem.path}
-                    className="block py-2 px-4 text-greenPrimaryButton hover:text-greenSecondaryButton hover:font-semibold"
+                    to={subItem.path}
+                    className={cn(
+                      "block py-2 px-4 text-greenPrimaryButton hover:text-greenSecondaryButton hover:font-semibold",
+                      location.pathname === subItem.path && "font-semibold"
+                    )}
                   >
                     {subItem.title}
-                  </a>
+                  </Link>
                 ))}
               </div>
             )}

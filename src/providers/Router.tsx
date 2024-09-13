@@ -29,6 +29,21 @@ const ProcesosCerradosPage = lazy(
 const EliminarProcesosPage = lazy(
   () => import("@/pages/Procesos/EliminarProcesos/EliminarProcesos")
 );
+const VerInventariosPage = lazy(
+  () => import("@/pages/SCI/VerInventarios/VerInventarios")
+);
+const RevisarInventariosPage = lazy(
+  () => import("@/pages/SCI/RevisarInventarios/RevisarInventarios")
+);
+const InformeInventariosPage = lazy(
+  () => import("@/pages/SCI/InformeInventarios/InformeInventarios")
+);
+const InformeNovedadesPage = lazy(
+  () => import("@/pages/Informes/InformeNovedades/InformeNovedades")
+);
+const InformeConciliacionPage = lazy(
+  () => import("@/pages/Informes/InformeConciliacion/InformeConciliacion")
+);
 
 const Router = () => {
   return (
@@ -121,6 +136,63 @@ const Router = () => {
                 <LayoutFull
                   children={
                     <ModulesContainer children={<EliminarProcesosPage />} />
+                  }
+                />
+              }
+            />
+            {/* MODULO SCI */}
+            <Route
+              path="/ver-inventarios"
+              index
+              element={
+                <LayoutFull
+                  children={
+                    <ModulesContainer children={<VerInventariosPage />} />
+                  }
+                />
+              }
+            />
+            <Route
+              path="/revisar-inventarios"
+              index
+              element={
+                <LayoutFull
+                  children={
+                    <ModulesContainer children={<RevisarInventariosPage />} />
+                  }
+                />
+              }
+            />
+            <Route
+              path="/informe-inventarios"
+              index
+              element={
+                <LayoutFull
+                  children={
+                    <ModulesContainer children={<InformeInventariosPage />} />
+                  }
+                />
+              }
+            />
+            {/* MODULO INFORMES */}
+            <Route
+              path="/informe-novedades"
+              index
+              element={
+                <LayoutFull
+                  children={
+                    <ModulesContainer children={<InformeNovedadesPage />} />
+                  }
+                />
+              }
+            />
+            <Route
+              path="/informe-conciliacion"
+              index
+              element={
+                <LayoutFull
+                  children={
+                    <ModulesContainer children={<InformeConciliacionPage />} />
                   }
                 />
               }

@@ -1,15 +1,20 @@
 import { ColumnDef } from "@tanstack/react-table";
 
-const getDetalleInventariosColumns = () => {
+const getInformeNovedadesColumns = () => {
   const tableColumns: ColumnDef<any>[] = [
     {
-      header: "Nro inventario",
-      accessorKey: "inventoryNumber",
+      header: "Cancha",
+      accessorKey: "court",
       meta: { type: "text" },
     },
     {
-      header: "Cuadrilla",
-      accessorKey: "group",
+      header: "Fecha",
+      accessorKey: "date",
+      meta: { type: "text" },
+    },
+    {
+      header: "Tipo",
+      accessorKey: "type",
       meta: { type: "text" },
     },
     {
@@ -38,12 +43,17 @@ const getDetalleInventariosColumns = () => {
       meta: { type: "text" },
     },
     {
-      header: "Observación",
-      accessorKey: "observation",
+      header: "Guias",
+      accessorKey: "guide",
+      meta: { type: "text" },
+    },
+    {
+      header: "Novedad",
+      accessorKey: "novelty",
       meta: { type: "text" },
     },
   ];
   return tableColumns;
 };
 
-export default getDetalleInventariosColumns;
+export default getInformeNovedadesColumns;
