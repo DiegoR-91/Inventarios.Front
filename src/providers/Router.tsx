@@ -23,6 +23,12 @@ const NovedadesPage = lazy(
 const ConciliacionPage = lazy(
   () => import("@/pages/Procesos/Conciliacion/Conciliacion")
 );
+const ProcesosCerradosPage = lazy(
+  () => import("@/pages/Procesos/ProcesosCerrados/ProcesosCerrados")
+);
+const EliminarProcesosPage = lazy(
+  () => import("@/pages/Procesos/EliminarProcesos/EliminarProcesos")
+);
 
 const Router = () => {
   return (
@@ -93,6 +99,28 @@ const Router = () => {
                 <LayoutFull
                   children={
                     <ModulesContainer children={<ConciliacionPage />} />
+                  }
+                />
+              }
+            />
+            <Route
+              path="/procesos-cerrados"
+              index
+              element={
+                <LayoutFull
+                  children={
+                    <ModulesContainer children={<ProcesosCerradosPage />} />
+                  }
+                />
+              }
+            />
+            <Route
+              path="/eliminar-procesos"
+              index
+              element={
+                <LayoutFull
+                  children={
+                    <ModulesContainer children={<EliminarProcesosPage />} />
                   }
                 />
               }

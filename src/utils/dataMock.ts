@@ -315,3 +315,36 @@ export const detalleInventariosDataMock = [
     observation: "Observación 1",
   },
 ];
+
+export const eliminarProcesosDataMock = [
+  {
+    court: "Cancha 1",
+    novelty: "Novedad 1",
+    noveltyDate: "2021-09-01",
+    noveltyuser: "Usuario 1",
+  },
+  {
+    court: "Cancha 1",
+    novelty: "Novedad 1",
+    noveltyDate: "2021-09-01",
+    noveltyuser: "Usuario 1",
+  },
+  {
+    court: "Cancha 1",
+    novelty: "Novedad 1",
+    noveltyDate: "2021-09-01",
+    noveltyuser: "Usuario 1",
+  },
+  {
+    court: "Cancha 1",
+    novelty: "Novedad 1",
+    noveltyDate: "2021-09-01",
+    noveltyuser: "Usuario 1",
+  },
+  {
+    court: "Cancha 1",
+    novelty: "Novedad 1",
+    noveltyDate: "2021-09-01",
+    noveltyuser: "Usuario 1",
+  },
+];
