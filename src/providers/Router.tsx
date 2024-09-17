@@ -56,6 +56,7 @@ const InformeAjusteProduccionPage = lazy(
 const InformeBalanceCartolasPage = lazy(
   () => import("@/pages/Informes/InformeBalanceCartolas/InformeBalanceCartolas")
 );
+const RolesPage = lazy(() => import("@/pages/Privilegios/Roles/Roles"));
 
 const Router = () => {
   return (
@@ -243,6 +244,16 @@ const Router = () => {
                       children={<InformeBalanceCartolasPage />}
                     />
                   }
+                />
+              }
+            />
+            {/* PRIVILEGIOS */}
+            <Route
+              path="/roles"
+              index
+              element={
+                <LayoutFull
+                  children={<ModulesContainer children={<RolesPage />} />}
                 />
               }
             />

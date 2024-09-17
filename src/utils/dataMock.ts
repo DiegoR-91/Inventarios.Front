@@ -1274,3 +1274,64 @@ export const informeBalanceCartolasDataMock = [
     value: "100",
   },
 ];
+
+/* Privilegios */
+export const rolesDataMock = [
+  {
+    code: "1",
+    glosa: "Rol 1",
+  },
+  {
+    code: "1",
+    glosa: "Rol 1",
+  },
+  {
+    code: "1",
+    glosa: "Rol 1",
+  },
+  {
+    code: "1",
+    glosa: "Rol 1",
+  },
+  {
+    code: "1",
+    glosa: "Rol 1",
+  },
+];
+export const detalleRolesDataMock = [
+  {
+    codeMenu: "1",
+    menu: "Menu 1",
+    codeSubMenu: "1",
+    subMenu: "Submenu 1",
+    update: "1",
+  },
+  {
+    codeMenu: "1",
+    menu: "Menu 1",
+    codeSubMenu: "1",
+    subMenu: "Submenu 1",
+    update: "1",
+  },
+  {
+    codeMenu: "1",
+    menu: "Menu 1",
+    codeSubMenu: "1",
+    subMenu: "Submenu 1",
+    update: "1",
+  },
+  {
+    codeMenu: "1",
+    menu: "Menu 1",
+    codeSubMenu: "1",
+    subMenu: "Submenu 1",
+    update: "1",
+  },
+  {
+    codeMenu: "1",
+    menu: "Menu 1",
+    codeSubMenu: "1",
+    subMenu: "Submenu 1",
+    update: "1",
+  },
+];

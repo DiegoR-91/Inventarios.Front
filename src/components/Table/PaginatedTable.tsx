@@ -53,7 +53,7 @@ const PaginatedTable = <T,>({
   }, [table.getState().rowSelection]);
 
   return (
-    <div className="flex w-full min-h-full max-w-full overflow-x-auto">
+    <div className="flex w-full  max-w-full overflow-x-auto">
       <div className="flex flex-col bg-white p-4 rounded-md shadow-md">
         <table className="w-full table-fixed">
           <thead className="bg-white h-10 rounded-lg justify-center text-black/70 text-small">
