@@ -55,9 +55,9 @@ export const sidebarItems = [
       { title: "Informe de Ajuste", path: "/informe-ajuste" },
       {
         title: "Ic. Ajustes - Producción",
-        path: "/informe-ic-ajuste-produccion",
+        path: "/informe-ajuste-produccion",
       },
-      { title: "Informe Balance Cartolas", path: "/informe-balance-cartlas" },
+      { title: "Informe Balance Cartolas", path: "/informe-balance-cartolas" },
     ],
   },
   {

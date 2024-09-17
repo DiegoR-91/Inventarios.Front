@@ -44,6 +44,18 @@ const InformeNovedadesPage = lazy(
 const InformeConciliacionPage = lazy(
   () => import("@/pages/Informes/InformeConciliacion/InformeConciliacion")
 );
+const InformeAjustePage = lazy(
+  () => import("@/pages/Informes/InformeAjuste/InformeAjuste")
+);
+const InformeAjusteProduccionPage = lazy(
+  () =>
+    import(
+      "@/pages/Informes/InformeCartolasAjusteProd/InformeCartolasAjusteProd"
+    )
+);
+const InformeBalanceCartolasPage = lazy(
+  () => import("@/pages/Informes/InformeBalanceCartolas/InformeBalanceCartolas")
+);
 
 const Router = () => {
   return (
@@ -193,6 +205,43 @@ const Router = () => {
                 <LayoutFull
                   children={
                     <ModulesContainer children={<InformeConciliacionPage />} />
+                  }
+                />
+              }
+            />
+            <Route
+              path="/informe-ajuste"
+              index
+              element={
+                <LayoutFull
+                  children={
+                    <ModulesContainer children={<InformeAjustePage />} />
+                  }
+                />
+              }
+            />
+            <Route
+              path="/informe-ajuste-produccion"
+              index
+              element={
+                <LayoutFull
+                  children={
+                    <ModulesContainer
+                      children={<InformeAjusteProduccionPage />}
+                    />
+                  }
+                />
+              }
+            />
+            <Route
+              path="/informe-balance-cartolas"
+              index
+              element={
+                <LayoutFull
+                  children={
+                    <ModulesContainer
+                      children={<InformeBalanceCartolasPage />}
+                    />
                   }
                 />
               }

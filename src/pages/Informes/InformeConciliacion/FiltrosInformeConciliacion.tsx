@@ -111,7 +111,7 @@ const FiltrosInformeNovedades = () => {
           </div>
           <div className="flex items-center gap-4">
             <input type="checkbox" id="procesos" className="" />
-            <label className="text-black/60 font-semibold">TProcesos</label>
+            <label className="text-black/60 font-semibold">Procesos</label>
             <SelectCustom
               options={selectMockOptions}
               onSelect={() => {}}
