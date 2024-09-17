@@ -57,6 +57,10 @@ const InformeBalanceCartolasPage = lazy(
   () => import("@/pages/Informes/InformeBalanceCartolas/InformeBalanceCartolas")
 );
 const RolesPage = lazy(() => import("@/pages/Privilegios/Roles/Roles"));
+const MenuPage = lazy(() => import("@/pages/Privilegios/Menu/Menu"));
+const UsuariosPage = lazy(
+  () => import("@/pages/Privilegios/Usuarios/Usuarios")
+);
 
 const Router = () => {
   return (
@@ -254,6 +258,24 @@ const Router = () => {
               element={
                 <LayoutFull
                   children={<ModulesContainer children={<RolesPage />} />}
+                />
+              }
+            />
+            <Route
+              path="/menu"
+              index
+              element={
+                <LayoutFull
+                  children={<ModulesContainer children={<MenuPage />} />}
+                />
+              }
+            />
+            <Route
+              path="/usuarios"
+              index
+              element={
+                <LayoutFull
+                  children={<ModulesContainer children={<UsuariosPage />} />}
                 />
               }
             />

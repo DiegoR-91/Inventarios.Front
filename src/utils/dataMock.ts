@@ -1,4 +1,5 @@
 import { SelectOptions } from "@/interfaces/commons";
+import { link } from "@nextui-org/react";
 
 export const selectMockOptions: SelectOptions[] = [
   { value: 0, label: "Todos" },
@@ -1333,5 +1334,91 @@ export const detalleRolesDataMock = [
     codeSubMenu: "1",
     subMenu: "Submenu 1",
     update: "1",
+  },
+];
+export const menuDataMock = [
+  {
+    menu: "Menu 1",
+    orden: "1",
+    vigente: "1",
+  },
+  {
+    menu: "Menu 1",
+    orden: "1",
+    vigente: "1",
+  },
+  {
+    menu: "Menu 1",
+    orden: "1",
+    vigente: "1",
+  },
+  {
+    menu: "Menu 1",
+    orden: "1",
+    vigente: "1",
+  },
+];
+
+export const subMenuDataMock = [
+  {
+    subMenu: "Submenu 1",
+    link: "Link 1",
+    orden: "1",
+    vigente: "1",
+  },
+  {
+    subMenu: "Submenu 1",
+    link: "Link 1",
+    orden: "1",
+    vigente: "1",
+  },
+  {
+    subMenu: "Submenu 1",
+    link: "Link 1",
+    orden: "1",
+    vigente: "1",
+  },
+  {
+    subMenu: "Submenu 1",
+    link: "Link 1",
+    orden: "1",
+    vigente: "1",
+  },
+];
+export const usuariosDataMock = [
+  {
+    rut: "12345678",
+    nombre: "Usuario 1",
+    username: "usuario1",
+    rol: "Rol 1",
+    activo: true,
+  },
+  {
+    rut: "12345678",
+    nombre: "Usuario 1",
+    username: "usuario1",
+    rol: "Rol 1",
+    activo: true,
+  },
+  {
+    rut: "12345678",
+    nombre: "Usuario 1",
+    username: "usuario1",
+    rol: "Rol 1",
+    activo: true,
+  },
+  {
+    rut: "12345678",
+    nombre: "Usuario 1",
+    username: "usuario1",
+    rol: "Rol 1",
+    activo: true,
+  },
+  {
+    rut: "12345678",
+    nombre: "Usuario 1",
+    username: "usuario1",
+    rol: "Rol 1",
+    activo: true,
   },
 ];
