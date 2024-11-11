@@ -7,7 +7,7 @@ interface IGetVerInventarios extends QueryPaginatedProps {
   filters?: any;
 }
 
-export const getVerInventarios = async ({
+export const getVerInventariosWFUno = async ({
   page,
   cantidadRegistros,
   sorting,
@@ -57,7 +57,7 @@ export const getVerInventarios = async ({
   return verInventarioList;
 };
 
-const useGetVerInventarios = (
+const useGetVerInventariosWFUno = (
   sorting: SortingState,
   pagination: { pageIndex: number; pageSize: number },
   cantidadRegistros: number,
@@ -65,14 +65,14 @@ const useGetVerInventarios = (
 ) => {
   return useQuery({
     queryKey: [
-      "verInventariosSCI",
+      "verInventariosWF1SCI",
       sorting,
       pagination.pageIndex,
       cantidadRegistros,
       filters,
     ],
     queryFn: async () => {
-      const fetchedData = await getVerInventarios({
+      const fetchedData = await getVerInventariosWFUno({
         page: pagination.pageIndex,
         cantidadRegistros,
         sorting,
@@ -86,4 +86,4 @@ const useGetVerInventarios = (
   });
 };
 
-export default useGetVerInventarios;
+export default useGetVerInventariosWFUno;

@@ -12,11 +12,11 @@ export const sidebarItems = [
     subMenu: [
       {
         title: "Inventarios de Mermas",
-        path: "/inventarios-mermas",
+        path: "/inventarios/inventarios-mermas",
       },
       {
         title: "Mantención de Cartolas",
-        path: "/mantencion-cartolas",
+        path: "/inventarios/mantencion-cartolas",
       },
     ],
   },
@@ -24,49 +24,57 @@ export const sidebarItems = [
     title: "Administración",
     icon: <IconAdmin />,
     subMenu: [
-      { title: "Productos Excluidos", path: "/productos-excluidos" },
-      { title: "Novedades", path: "/novedades" },
+      {
+        title: "Productos Excluidos",
+        path: "/administracion/productos-excluidos",
+      },
+      { title: "Novedades", path: "/administracion/novedades" },
     ],
   },
   {
     title: "Procesos",
     icon: <IconProcess />,
     subMenu: [
-      { title: "Conciliación", path: "/conciliacion" },
-      { title: "Procesos Cerrados", path: "/procesos-cerrados" },
-      { title: "Eliminar Procesos", path: "/eliminar-procesos" },
+      { title: "Conciliación", path: "/procesos/conciliacion" },
+      { title: "Procesos Cerrados", path: "/procesos/procesos-cerrados" },
+      { title: "Eliminar Procesos", path: "/procesos/eliminar-procesos" },
     ],
   },
   {
     title: "SCI",
     icon: <IconSCI />,
     subMenu: [
-      { title: "Ver Inventarios", path: "/ver-inventarios" },
-      { title: "Revisar Inventarios", path: "/revisar-inventarios" },
-      { title: "Informe de Inventarios", path: "/informe-inventarios" },
+      { title: "Revisión (WF 0)", path: "/sci/wf0/revision" },
+      { title: "Jefe de Area (WF 1)", path: "/sci/wf1/ver-inventarios" },
+      { title: "Subgerente (WF 2)", path: "/sci/wf2/ver-inventarios" },
+      { title: "Informe de Inventarios", path: "/sci/informe-inventarios" },
+      { title: "Roles y Usuarios", path: "/sci/roles" },
     ],
   },
   {
     title: "Informes",
     icon: <IconReports />,
     subMenu: [
-      { title: "Informe Novedades", path: "/informe-novedades" },
-      { title: "Informe Conciliación", path: "/informe-conciliacion" },
-      { title: "Informe de Ajuste", path: "/informe-ajuste" },
+      { title: "Informe Novedades", path: "/informes/informe-novedades" },
+      { title: "Informe Conciliación", path: "/informes/informe-conciliacion" },
+      { title: "Informe de Ajuste", path: "/informes/informe-ajuste" },
       {
         title: "Ic. Ajustes - Producción",
-        path: "/informe-ajuste-produccion",
+        path: "/informes/informe-ajuste-produccion",
       },
-      { title: "Informe Balance Cartolas", path: "/informe-balance-cartolas" },
+      {
+        title: "Informe Balance Cartolas",
+        path: "/informes/informe-balance-cartolas",
+      },
     ],
   },
   {
     title: "Privilegios",
     icon: <IconPrivileges />,
     subMenu: [
-      { title: "Roles", path: "/roles" },
-      { title: "Menú", path: "/menu" },
-      { title: "Usuarios", path: "/usuarios" },
+      { title: "Roles", path: "/privilegios/roles" },
+      { title: "Menú", path: "/privilegios/menu" },
+      { title: "Usuarios", path: "/privilegios/usuarios" },
     ],
   },
 ];

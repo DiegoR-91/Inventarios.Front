@@ -1,5 +1,4 @@
 import { SelectOptions } from "@/interfaces/commons";
-import { link } from "@nextui-org/react";
 
 export const selectMockOptions: SelectOptions[] = [
   { value: 0, label: "Todos" },
@@ -544,7 +543,30 @@ export const revisarInventariosSCIDataMock = [
     jaRe: "100",
   },
 ];
-
+export const SCIRolesDataMock = [
+  { code: "2345", rol: "Administrador" },
+  { code: "2345", rol: "Administrador" },
+  { code: "2345", rol: "Administrador" },
+  { code: "2345", rol: "Administrador" },
+  { code: "2345", rol: "Administrador" },
+  { code: "2345", rol: "Administrador" },
+  { code: "2345", rol: "Administrador" },
+  { code: "2345", rol: "Administrador" },
+  { code: "2345", rol: "Administrador" },
+  { code: "2345", rol: "Administrador" },
+];
+export const SCIUsuariosDataMock = [
+  { rut: "123332", name: "2345", rol: "Administrador" },
+  { rut: "123332", name: "2345", rol: "Administrador" },
+  { rut: "123332", name: "2345", rol: "Administrador" },
+  { rut: "123332", name: "2345", rol: "Administrador" },
+  { rut: "123332", name: "2345", rol: "Administrador" },
+  { rut: "123332", name: "2345", rol: "Administrador" },
+  { rut: "123332", name: "2345", rol: "Administrador" },
+  { rut: "123332", name: "2345", rol: "Administrador" },
+  { rut: "123332", name: "2345", rol: "Administrador" },
+  { rut: "123332", name: "2345", rol: "Administrador" },
+];
 /* Informes */
 export const informeNovedadesDataMock = [
   {

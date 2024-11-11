@@ -29,14 +29,43 @@ const ProcesosCerradosPage = lazy(
 const EliminarProcesosPage = lazy(
   () => import("@/pages/Procesos/EliminarProcesos/EliminarProcesos")
 );
-const VerInventariosPage = lazy(
-  () => import("@/pages/SCI/VerInventarios/VerInventarios")
+const RevisionWFCeroPage = lazy(
+  () => import("@/pages/SCI/WorkflowCero/RevisionWFCero/RevisionWFCero")
 );
-const RevisarInventariosPage = lazy(
-  () => import("@/pages/SCI/RevisarInventarios/RevisarInventarios")
+const DetalleRevisionWFCeroPage = lazy(
+  () =>
+    import(
+      "@/pages/SCI/WorkflowCero/DetallesRevisionWFCero/DetallesRevisionWFCero"
+    )
+);
+const VerInventariosWFUnoPage = lazy(
+  () =>
+    import("@/pages/SCI/WorkflowUno/VerInventariosWFUno/VerInventariosWFUno")
+);
+const RevisarInventariosWFUnoPage = lazy(
+  () =>
+    import(
+      "@/pages/SCI/WorkflowUno/RevisarInventariosWFUno/RevisarInventariosWFUno"
+    )
+);
+const VerInventariosWFDosPage = lazy(
+  () =>
+    import("@/pages/SCI/WorkflowDos/VerInventariosWFDos/VerInventariosWFDos")
+);
+const RevisarInventariosWFDosPage = lazy(
+  () =>
+    import(
+      "@/pages/SCI/WorkflowDos/RevisarInventariosWFDos/RevisarInventariosWFDos"
+    )
+);
+const SCIRolesPage = lazy(
+  () => import("@/pages/SCI/RolesUsuarios/Roles/Roles")
 );
 const InformeInventariosPage = lazy(
   () => import("@/pages/SCI/InformeInventarios/InformeInventarios")
+);
+const SCIUsuariosPage = lazy(
+  () => import("@/pages/SCI/RolesUsuarios/Usuarios/Usuarios")
 );
 const InformeNovedadesPage = lazy(
   () => import("@/pages/Informes/InformeNovedades/InformeNovedades")
@@ -81,7 +110,7 @@ const Router = () => {
             />
             {/* MODULO INVENTARIOS */}
             <Route
-              path="/inventarios-mermas"
+              path="inventarios/inventarios-mermas"
               index
               element={
                 <LayoutFull
@@ -92,7 +121,7 @@ const Router = () => {
               }
             />
             <Route
-              path="/mantencion-cartolas"
+              path="inventarios/mantencion-cartolas"
               index
               element={
                 <LayoutFull
@@ -104,7 +133,7 @@ const Router = () => {
             />
             {/* MODULO ADMINISTRACION */}
             <Route
-              path="/productos-excluidos"
+              path="administracion/productos-excluidos"
               index
               element={
                 <LayoutFull
@@ -115,7 +144,7 @@ const Router = () => {
               }
             />
             <Route
-              path="/novedades"
+              path="administracion/novedades"
               index
               element={
                 <LayoutFull
@@ -125,7 +154,7 @@ const Router = () => {
             />
             {/* MODULO PROCESOS */}
             <Route
-              path="/conciliacion"
+              path="procesos/conciliacion"
               index
               element={
                 <LayoutFull
@@ -136,7 +165,7 @@ const Router = () => {
               }
             />
             <Route
-              path="/procesos-cerrados"
+              path="procesos/procesos-cerrados"
               index
               element={
                 <LayoutFull
@@ -147,7 +176,7 @@ const Router = () => {
               }
             />
             <Route
-              path="/eliminar-procesos"
+              path="procesos/eliminar-procesos"
               index
               element={
                 <LayoutFull
@@ -158,30 +187,84 @@ const Router = () => {
               }
             />
             {/* MODULO SCI */}
+            {/* WF0 */}
             <Route
-              path="/ver-inventarios"
+              path="sci/wf0/revision"
               index
               element={
                 <LayoutFull
                   children={
-                    <ModulesContainer children={<VerInventariosPage />} />
+                    <ModulesContainer children={<RevisionWFCeroPage />} />
                   }
                 />
               }
             />
             <Route
-              path="/revisar-inventarios"
+              path="sci/wf0/detalle-revision"
               index
               element={
                 <LayoutFull
                   children={
-                    <ModulesContainer children={<RevisarInventariosPage />} />
+                    <ModulesContainer
+                      children={<DetalleRevisionWFCeroPage />}
+                    />
+                  }
+                />
+              }
+            />
+            {/* WF1 */}
+            <Route
+              path="sci/wf1/ver-inventarios"
+              index
+              element={
+                <LayoutFull
+                  children={
+                    <ModulesContainer children={<VerInventariosWFUnoPage />} />
                   }
                 />
               }
             />
             <Route
-              path="/informe-inventarios"
+              path="sci/wf1/revisar-inventarios"
+              index
+              element={
+                <LayoutFull
+                  children={
+                    <ModulesContainer
+                      children={<RevisarInventariosWFUnoPage />}
+                    />
+                  }
+                />
+              }
+            />
+            {/* WF2 */}
+            <Route
+              path="sci/wf2/ver-inventarios"
+              index
+              element={
+                <LayoutFull
+                  children={
+                    <ModulesContainer children={<VerInventariosWFDosPage />} />
+                  }
+                />
+              }
+            />
+            <Route
+              path="sci/wf2/revisar-inventarios"
+              index
+              element={
+                <LayoutFull
+                  children={
+                    <ModulesContainer
+                      children={<RevisarInventariosWFDosPage />}
+                    />
+                  }
+                />
+              }
+            />
+            {/* Informe */}
+            <Route
+              path="sci/informe-inventarios"
               index
               element={
                 <LayoutFull
@@ -191,9 +274,28 @@ const Router = () => {
                 />
               }
             />
+            {/* Roles y usuarios */}
+            <Route
+              path="sci/roles"
+              index
+              element={
+                <LayoutFull
+                  children={<ModulesContainer children={<SCIRolesPage />} />}
+                />
+              }
+            />
+            <Route
+              path="sci/usuarios"
+              index
+              element={
+                <LayoutFull
+                  children={<ModulesContainer children={<SCIUsuariosPage />} />}
+                />
+              }
+            />
             {/* MODULO INFORMES */}
             <Route
-              path="/informe-novedades"
+              path="/informes/informe-novedades"
               index
               element={
                 <LayoutFull
@@ -204,7 +306,7 @@ const Router = () => {
               }
             />
             <Route
-              path="/informe-conciliacion"
+              path="/informes/informe-conciliacion"
               index
               element={
                 <LayoutFull
@@ -215,7 +317,7 @@ const Router = () => {
               }
             />
             <Route
-              path="/informe-ajuste"
+              path="/informes/informe-ajuste"
               index
               element={
                 <LayoutFull
@@ -226,7 +328,7 @@ const Router = () => {
               }
             />
             <Route
-              path="/informe-ajuste-produccion"
+              path="/informes/informe-ajuste-produccion"
               index
               element={
                 <LayoutFull
@@ -239,7 +341,7 @@ const Router = () => {
               }
             />
             <Route
-              path="/informe-balance-cartolas"
+              path="/informes/informe-balance-cartolas"
               index
               element={
                 <LayoutFull
@@ -253,7 +355,7 @@ const Router = () => {
             />
             {/* PRIVILEGIOS */}
             <Route
-              path="/roles"
+              path="/privilegios/roles"
               index
               element={
                 <LayoutFull
@@ -262,7 +364,7 @@ const Router = () => {
               }
             />
             <Route
-              path="/menu"
+              path="/privilegios/menu"
               index
               element={
                 <LayoutFull
@@ -271,7 +373,7 @@ const Router = () => {
               }
             />
             <Route
-              path="/usuarios"
+              path="/privilegios/usuarios"
               index
               element={
                 <LayoutFull

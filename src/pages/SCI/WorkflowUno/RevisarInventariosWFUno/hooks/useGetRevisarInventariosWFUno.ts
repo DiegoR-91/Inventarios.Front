@@ -7,7 +7,7 @@ interface IGetRevisarInventarios extends QueryPaginatedProps {
   filters?: any;
 }
 
-export const getRevisarInventarios = async ({
+export const getRevisarInventariosWFUno = async ({
   page,
   cantidadRegistros,
   sorting,
@@ -57,7 +57,7 @@ export const getRevisarInventarios = async ({
   return revisarInventarioList;
 };
 
-const useGetRevisarInventarios = (
+const useGetRevisarInventariosWFUno = (
   sorting: SortingState,
   pagination: { pageIndex: number; pageSize: number },
   cantidadRegistros: number,
@@ -65,14 +65,14 @@ const useGetRevisarInventarios = (
 ) => {
   return useQuery({
     queryKey: [
-      "verInventariosSCI",
+      "revisarInventariosWF1SCI",
       sorting,
       pagination.pageIndex,
       cantidadRegistros,
       filters,
     ],
     queryFn: async () => {
-      const fetchedData = await getRevisarInventarios({
+      const fetchedData = await getRevisarInventariosWFUno({
         page: pagination.pageIndex,
         cantidadRegistros,
         sorting,
@@ -86,4 +86,4 @@ const useGetRevisarInventarios = (
   });
 };
 
-export default useGetRevisarInventarios;
+export default useGetRevisarInventariosWFUno;

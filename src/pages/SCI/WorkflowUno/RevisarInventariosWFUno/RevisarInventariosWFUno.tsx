@@ -1,23 +1,27 @@
 import PaginatedTable from "@/components/Table/PaginatedTable";
-import getVerInventariosColumns from "./getVerInventariosColumns";
+import getRevisarInventariosWFUnoColumns from "./getRevisarInventariosWFUnoColumns";
 import { useState } from "react";
 import { PaginationState, SortingState } from "@tanstack/react-table";
-import useGetVerInventarios from "./hooks/useGetVerInventarios";
+import useGetVerInventariosWFUno from "./hooks/useGetRevisarInventariosWFUno";
 import Loading from "@/components/Loading/Loading";
-import { IoEyeOutline } from "react-icons/io5";
 import { TfiExport } from "react-icons/tfi";
+import { IoIosSearch } from "react-icons/io";
+import { TfiImport } from "react-icons/tfi";
+import { TfiWrite } from "react-icons/tfi";
+import { BiMessageError } from "react-icons/bi";
+import { IoCloseOutline } from "react-icons/io5";
 import ButtonLeftIcon from "@/components/Button/ButtonLeftIcon";
 
-const tableColumnsVerInventarios = getVerInventariosColumns();
+const tableColumnsRevisarInventariosWFUno = getRevisarInventariosWFUnoColumns();
 
-const VerInventarios = () => {
+const RevisarInventariosWFUno = () => {
   const [sorting, setSorting] = useState<SortingState>([]);
   const [pagination, setPagination] = useState<PaginationState>({
     pageIndex: 1,
     pageSize: 10,
   });
   const [rowSize, setRowSize] = useState<number>(10);
-  const { data, isLoading } = useGetVerInventarios(
+  const { data, isLoading } = useGetVerInventariosWFUno(
     sorting,
     pagination,
     rowSize
@@ -35,8 +39,28 @@ const VerInventarios = () => {
       <div className="flex flex-col w-full h-full">
         <div className="flex w-full gap-4">
           <ButtonLeftIcon
-            name="Revisar"
-            icon={<IoEyeOutline />}
+            name="Consultar"
+            icon={<IoIosSearch size={20} />}
+            classname="bg-greenSecondaryButton text-white rounded-md"
+          />
+          <ButtonLeftIcon
+            name="Guardar"
+            icon={<TfiImport />}
+            classname="bg-greenSecondaryButton text-white rounded-md"
+          />
+          <ButtonLeftIcon
+            name="Solicitar Aprobación"
+            icon={<TfiWrite />}
+            classname="bg-greenSecondaryButton text-white rounded-md"
+          />
+          <ButtonLeftIcon
+            name="Notificar Rechazos"
+            icon={<BiMessageError size={20} />}
+            classname="bg-greenSecondaryButton text-white rounded-md"
+          />
+          <ButtonLeftIcon
+            name="Cancelar"
+            icon={<IoCloseOutline size={22} />}
             classname="bg-greenSecondaryButton text-white rounded-md"
           />
           <ButtonLeftIcon
@@ -47,7 +71,7 @@ const VerInventarios = () => {
         </div>
         <div className="pt-5">
           <PaginatedTable
-            columns={tableColumnsVerInventarios}
+            columns={tableColumnsRevisarInventariosWFUno}
             data={data}
             sorting={sorting}
             setSorting={setSorting}
@@ -62,4 +86,4 @@ const VerInventarios = () => {
   );
 };
 
-export default VerInventarios;
+export default RevisarInventariosWFUno;

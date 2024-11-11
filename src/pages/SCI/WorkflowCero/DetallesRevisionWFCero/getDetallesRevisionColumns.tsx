@@ -1,7 +1,7 @@
 import IndeterminateCheckbox from "@/components/Input/IndeterminateCheckbox";
 import { ColumnDef } from "@tanstack/react-table";
 
-const getRevisarInventariosColumns = () => {
+const getDetallesRevisionColumns = () => {
   const tableColumns: ColumnDef<any>[] = [
     {
       id: "select",
@@ -116,4 +116,4 @@ const getRevisarInventariosColumns = () => {
   return tableColumns;
 };
 
-export default getRevisarInventariosColumns;
+export default getDetallesRevisionColumns;
