@@ -1,11 +1,12 @@
 import IndeterminateCheckbox from "@/components/Input/IndeterminateCheckbox";
+import InputCheckTable from "@/components/Input/InputCheckTable";
 import { ColumnDef } from "@tanstack/react-table";
 
 const getRevisarInventariosWFUnoColumns = () => {
   const tableColumns: ColumnDef<any>[] = [
     {
       id: "select",
-      header: ({ table }) => (
+      /*   header: ({ table }) => (
         <div className="flex w-full px-1">
           <IndeterminateCheckbox
             {...{
@@ -15,7 +16,7 @@ const getRevisarInventariosWFUnoColumns = () => {
             }}
           />
         </div>
-      ),
+      ), */
       cell: ({ row }) => (
         <div className="px-1">
           <IndeterminateCheckbox
@@ -28,9 +29,44 @@ const getRevisarInventariosWFUnoColumns = () => {
           />
         </div>
       ),
+      meta: { sticky: "left" },
       size: 60,
       minSize: 60,
       maxSize: 60,
+    },
+    {
+      header: "Inv.",
+      accessorKey: "inventory",
+      meta: { type: "text", sticky: "left" },
+      size: 60,
+      minSize: 60,
+      maxSize: 60,
+      cell: InputCheckTable,
+    },
+    {
+      header: "Ja. ap",
+      accessorKey: "jaAp",
+      meta: { type: "text", sticky: "left" },
+      size: 60,
+      minSize: 60,
+      maxSize: 60,
+      cell: InputCheckTable,
+    },
+    {
+      header: "Dif.",
+      accessorKey: "dif",
+      meta: { type: "text", sticky: "left" },
+      size: 100,
+      minSize: 100,
+      maxSize: 100,
+    },
+    {
+      header: "JA Obs.",
+      accessorKey: "jaObs",
+      meta: { type: "text", sticky: "left" },
+      size: 100,
+      minSize: 100,
+      maxSize: 100,
     },
     {
       header: "Cancha",
@@ -82,19 +118,10 @@ const getRevisarInventariosWFUnoColumns = () => {
       accessorKey: "inventoryM3",
       meta: { type: "text" },
     },
-    {
-      header: "Dif.",
-      accessorKey: "dif",
-      meta: { type: "text" },
-    },
+
     {
       header: "Dif. Ajust",
       accessorKey: "diffAdjust",
-      meta: { type: "text" },
-    },
-    {
-      header: "Inv.",
-      accessorKey: "inventory",
       meta: { type: "text" },
     },
     {
@@ -103,14 +130,22 @@ const getRevisarInventariosWFUnoColumns = () => {
       meta: { type: "text" },
     },
     {
-      header: "Ja. ap",
-      accessorKey: "jaAp",
+      header: "Sg. ap",
+      accessorKey: "sgAp",
       meta: { type: "text" },
+      size: 60,
+      minSize: 60,
+      maxSize: 60,
+      cell: InputCheckTable,
     },
     {
-      header: "Ja. re",
-      accessorKey: "jaRe",
+      header: "Sg. re",
+      accessorKey: "sgRe",
       meta: { type: "text" },
+      size: 60,
+      minSize: 60,
+      maxSize: 60,
+      cell: InputCheckTable,
     },
   ];
   return tableColumns;
