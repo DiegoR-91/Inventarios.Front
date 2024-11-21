@@ -1,4 +1,3 @@
-import PaginatedTable from "@/components/Table/PaginatedTable";
 import getRevisarInventariosWFDosColumns from "./getRevisarInventariosWFDosColumns";
 import { useState } from "react";
 import { PaginationState, SortingState } from "@tanstack/react-table";
@@ -11,6 +10,7 @@ import { TfiWrite } from "react-icons/tfi";
 import { BiMessageError } from "react-icons/bi";
 import { IoCloseOutline } from "react-icons/io5";
 import ButtonLeftIcon from "@/components/Button/ButtonLeftIcon";
+import RevisarInventariosWFDosTable from "./RevisarInventariosWFDosTable";
 
 const tableColumnsRevisarInventariosWFDos = getRevisarInventariosWFDosColumns();
 
@@ -70,7 +70,7 @@ const RevisarInventarios = () => {
           />
         </div>
         <div className="pt-5">
-          <PaginatedTable
+          <RevisarInventariosWFDosTable
             columns={tableColumnsRevisarInventariosWFDos}
             data={data}
             sorting={sorting}

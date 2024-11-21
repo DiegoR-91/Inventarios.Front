@@ -1,18 +1,15 @@
-import PaginatedTable from "@/components/Table/PaginatedTable";
 import getDetallesRevisionColumns from "./getDetallesRevisionColumns";
 import { useState } from "react";
 import { PaginationState, SortingState } from "@tanstack/react-table";
 import useGetDetallesRevisionWFCero from "./hooks/useGetDetallesRevisionWFCero";
 import Loading from "@/components/Loading/Loading";
-import { TfiExport } from "react-icons/tfi";
 import { IoIosSearch } from "react-icons/io";
 import { TfiImport } from "react-icons/tfi";
-import { TfiWrite } from "react-icons/tfi";
-import { BiMessageError } from "react-icons/bi";
 import { IoCloseOutline } from "react-icons/io5";
 import ButtonLeftIcon from "@/components/Button/ButtonLeftIcon";
 import { Divider } from "@nextui-org/react";
 import ButtonCustom from "@/components/Button/ButtonCustom";
+import DetalleRevisionWFCeroTable from "./DetalleRevisionWFCeroTable";
 
 const tableColumnsDetallesRevisionColumns = getDetallesRevisionColumns();
 
@@ -92,7 +89,7 @@ const DetallesRevisionWFCero = () => {
           </div>
         </div>
         <div className="pt-5">
-          <PaginatedTable
+          <DetalleRevisionWFCeroTable
             columns={tableColumnsDetallesRevisionColumns}
             data={data}
             sorting={sorting}

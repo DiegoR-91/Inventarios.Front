@@ -12,7 +12,7 @@ import { PaginatedTableProps } from "@/components/Table/interfaces";
 import Loading from "@/components/Loading/Loading";
 import { getCommonPinningStyles } from "@/utils/getCommonPinnigStyles";
 
-const RevisarInventarioWFUnoTable = <T,>({
+const RevisarInventariosWFDosTable = <T,>({
   data,
   columns,
   isFetching,
@@ -69,7 +69,7 @@ const RevisarInventarioWFUnoTable = <T,>({
                         colSpan={header.colSpan}
                         className="border-b-2 border-b-black px-1 py-4 justify-center items-center"
                         style={{
-                          ...getCommonPinningStyles(header.column, "jaObs"),
+                          ...getCommonPinningStyles(header.column, "sgap"),
                         }}
                       >
                         {header.isPlaceholder ? null : (
@@ -115,7 +115,7 @@ const RevisarInventarioWFUnoTable = <T,>({
                         <td
                           key={cell.id}
                           className="py-3 px-1 justify-center items-center"
-                          style={{ ...getCommonPinningStyles(column, "jaObs") }}
+                          style={{ ...getCommonPinningStyles(column, "sgap") }}
                         >
                           {flexRender(
                             cell.column.columnDef.cell,
@@ -167,4 +167,4 @@ const RevisarInventarioWFUnoTable = <T,>({
   );
 };
 
-export default RevisarInventarioWFUnoTable;
+export default RevisarInventariosWFDosTable;

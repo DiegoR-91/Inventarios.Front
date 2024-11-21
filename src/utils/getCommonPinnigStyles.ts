@@ -1,10 +1,14 @@
 import { CSSProperties } from "react";
 
-export const getCommonPinningStyles = (column: any): CSSProperties => {
+export const getCommonPinningStyles = (
+  column: any,
+  lastColumnName: string
+): CSSProperties => {
   const columnMeta = column?.columnDef?.meta;
   const isPinned = !!columnMeta.sticky;
   const isLastLeftPinnedColumn =
-    columnMeta.sticky === "left" && column?.columnDef?.accessorKey === "jaObs";
+    columnMeta.sticky === "left" &&
+    column?.columnDef?.accessorKey === lastColumnName;
 
   return {
     boxShadow: isLastLeftPinnedColumn ? "-4px 0 4px -4px gray inset" : "",

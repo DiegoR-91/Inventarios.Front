@@ -40,7 +40,7 @@ const VerInventariosWFDos = () => {
             name="Revisar"
             icon={<IoEyeOutline />}
             classname="bg-greenSecondaryButton text-white rounded-md"
-            onClick={() => navigate("/sci/wf1/revisar-inventarios")}
+            onClick={() => navigate("/sci/wf2/revisar-inventarios")}
           />
           <ButtonLeftIcon
             name="Exportar"
