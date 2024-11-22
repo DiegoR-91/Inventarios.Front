@@ -1,14 +1,22 @@
 import IconAdmin from "@/assets/icons/IconAdmin";
+import IconAdminActive from "@/assets/icons/IconAdminActive";
 import IconInventory from "@/assets/icons/IconInventory";
+import IconInventoryActive from "@/assets/icons/IconInventoryActive";
 import IconPrivileges from "@/assets/icons/IconPrivileges";
+import IconPrivilegesActive from "@/assets/icons/IconPrivilegesActive";
 import IconProcess from "@/assets/icons/IconProcess";
+import IconProcessActive from "@/assets/icons/IconProcessActive";
 import IconReports from "@/assets/icons/IconReports";
+import IconReportsActive from "@/assets/icons/IconReportsActive";
 import IconSCI from "@/assets/icons/IconSCI";
+import IconSCIActive from "@/assets/icons/IconSCIActive";
 
 export const sidebarItems = [
   {
     title: "Inventarios",
     icon: <IconInventory />,
+    iconActive: <IconInventoryActive />,
+    path: "/inventarios/inventarios-mermas",
     subMenu: [
       {
         title: "Inventarios de Mermas",
@@ -23,6 +31,8 @@ export const sidebarItems = [
   {
     title: "Administración",
     icon: <IconAdmin />,
+    iconActive: <IconAdminActive />,
+    path: "/administracion/productos-excluidos",
     subMenu: [
       {
         title: "Productos Excluidos",
@@ -34,6 +44,8 @@ export const sidebarItems = [
   {
     title: "Procesos",
     icon: <IconProcess />,
+    iconActive: <IconProcessActive />,
+    path: "/procesos/conciliacion",
     subMenu: [
       { title: "Conciliación", path: "/procesos/conciliacion" },
       { title: "Procesos Cerrados", path: "/procesos/procesos-cerrados" },
@@ -43,6 +55,8 @@ export const sidebarItems = [
   {
     title: "SCI",
     icon: <IconSCI />,
+    iconActive: <IconSCIActive />,
+    path: "/sci/wf0/revision",
     subMenu: [
       { title: "Revisión (WF 0)", path: "/sci/wf0/revision" },
       { title: "Jefe de Area (WF 1)", path: "/sci/wf1/ver-inventarios" },
@@ -54,6 +68,8 @@ export const sidebarItems = [
   {
     title: "Informes",
     icon: <IconReports />,
+    iconActive: <IconReportsActive />,
+    path: "/informes/informe-novedades",
     subMenu: [
       { title: "Informe Novedades", path: "/informes/informe-novedades" },
       { title: "Informe Conciliación", path: "/informes/informe-conciliacion" },
@@ -71,6 +87,8 @@ export const sidebarItems = [
   {
     title: "Privilegios",
     icon: <IconPrivileges />,
+    iconActive: <IconPrivilegesActive />,
+    path: "/privilegios/roles",
     subMenu: [
       { title: "Roles", path: "/privilegios/roles" },
       { title: "Menú", path: "/privilegios/menu" },

@@ -1,8 +1,8 @@
 import { SVGProps } from "react";
-const IconInventory = (props: SVGProps<SVGSVGElement>) => (
+const IconInventoryActive = (props: SVGProps<SVGSVGElement>) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={52} height={52} {...props}>
     <defs>
-      <clipPath id="a-IconInventory">
+      <clipPath id="a-inventoriActive">
         <path
           fill="#348437"
           stroke="#666"
@@ -12,11 +12,14 @@ const IconInventory = (props: SVGProps<SVGSVGElement>) => (
         />
       </clipPath>
     </defs>
-    <g data-name="Grupo 1859">
+    <g data-name="Grupo 1864">
+      <g data-name="Grupo 1858">
+        <path fill="#d6e8cd" d="M0 0h52v52H0z" data-name="Rect\xE1ngulo 1651" />
+      </g>
       <g
-        clipPath="url(#a-IconInventory)"
+        clipPath="url(#a-inventoriActive)"
         data-name="Enmascarar grupo 12"
-        transform="translate(5.273 -94.648)"
+        transform="translate(5.273 -95)"
       >
         <g data-name="Layer 2">
           <g fill="none" data-name="invisible box">
@@ -49,10 +52,7 @@ const IconInventory = (props: SVGProps<SVGSVGElement>) => (
           </g>
         </g>
       </g>
-      <g data-name="Grupo 1858">
-        <path fill="none" d="M0 0h52v52H0z" data-name="Rect\xE1ngulo 1651" />
-      </g>
     </g>
   </svg>
 );
-export default IconInventory;
+export default IconInventoryActive;

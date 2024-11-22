@@ -1,8 +1,8 @@
 import { SVGProps } from "react";
-const IconProcess = (props: SVGProps<SVGSVGElement>) => (
+const IconProcessActive = (props: SVGProps<SVGSVGElement>) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={52} height={52} {...props}>
     <defs>
-      <clipPath id="a-IconProcess">
+      <clipPath id="a-IconProcessActive">
         <path
           fill="#348437"
           stroke="#666"
@@ -12,10 +12,17 @@ const IconProcess = (props: SVGProps<SVGSVGElement>) => (
         />
       </clipPath>
     </defs>
-    <g data-name="Grupo 1871">
+    <g data-name="Grupo 1870">
       <g data-name="Grupo 1869">
         <g data-name="Grupo 1865">
           <g data-name="Grupo 1864">
+            <g data-name="Grupo 1858">
+              <path
+                fill="#d6e8cd"
+                d="M0 0h52v52H0z"
+                data-name="Rect\xE1ngulo 1651"
+              />
+            </g>
             <g data-name="Grupo 1866">
               <g data-name="Layer 2">
                 <g data-name="invisible box">
@@ -33,7 +40,7 @@ const IconProcess = (props: SVGProps<SVGSVGElement>) => (
       <g data-name="Grupo 1852">
         <g data-name="Grupo 18">
           <g
-            clipPath="url(#a-IconProcess)"
+            clipPath="url(#a-IconProcessActive)"
             data-name="Enmascarar grupo 4"
             transform="translate(5.273 -191)"
           >
@@ -64,4 +71,4 @@ const IconProcess = (props: SVGProps<SVGSVGElement>) => (
     </g>
   </svg>
 );
-export default IconProcess;
+export default IconProcessActive;

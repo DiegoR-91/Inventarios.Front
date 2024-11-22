@@ -1,8 +1,8 @@
 import { SVGProps } from "react";
-const IconPrivileges = (props: SVGProps<SVGSVGElement>) => (
+const IconPrivilegesActive = (props: SVGProps<SVGSVGElement>) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={52} height={52} {...props}>
     <defs>
-      <clipPath id="a-IconPrivileges">
+      <clipPath id="a-IconPrivilegesActive">
         <path
           fill="#348437"
           stroke="#666"
@@ -12,12 +12,19 @@ const IconPrivileges = (props: SVGProps<SVGSVGElement>) => (
         />
       </clipPath>
     </defs>
-    <g data-name="Grupo 1882">
+    <g data-name="Grupo 1879">
       <g data-name="Grupo 1878">
         <g data-name="Grupo 1872">
           <g data-name="Grupo 1869">
             <g data-name="Grupo 1865">
               <g data-name="Grupo 1864">
+                <g data-name="Grupo 1858">
+                  <path
+                    fill="#d6e8cd"
+                    d="M0 0h52v52H0z"
+                    data-name="Rect\xE1ngulo 1651"
+                  />
+                </g>
                 <g data-name="Grupo 1866">
                   <g data-name="Layer 2">
                     <g data-name="invisible box">
@@ -35,7 +42,7 @@ const IconPrivileges = (props: SVGProps<SVGSVGElement>) => (
         </g>
       </g>
       <g
-        clipPath="url(#a-IconPrivileges)"
+        clipPath="url(#a-IconPrivilegesActive)"
         data-name="Enmascarar grupo 10"
         transform="translate(5.437 -335)"
       >
@@ -59,4 +66,4 @@ const IconPrivileges = (props: SVGProps<SVGSVGElement>) => (
     </g>
   </svg>
 );
-export default IconPrivileges;
+export default IconPrivilegesActive;
