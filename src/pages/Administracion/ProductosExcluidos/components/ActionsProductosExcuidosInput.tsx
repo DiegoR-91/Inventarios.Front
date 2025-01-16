@@ -3,10 +3,10 @@ import { Modal, ModalContent, useDisclosure } from "@nextui-org/react";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import ModalEliminarProductoExcluido from "./ModalEliminarProductoExcluido";
 
-const ActionsProductosExcuidosInput = ({ /* row, */ column }: any) => {
+const ActionsProductosExcuidosInput = ({ row, column }: any) => {
   const { isOpen: isOpenModal, onOpen, onClose } = useDisclosure();
   const columnData = column?.columnDef?.meta;
-  //const rowData = row?.original;
+  const rowData = row?.original;
 
   return (
     <div className="edit-cell-container">
@@ -36,7 +36,8 @@ const ActionsProductosExcuidosInput = ({ /* row, */ column }: any) => {
       >
         <ModalContent className="h-[20rem]">
           <ModalEliminarProductoExcluido
-            onHandleDisabled={() => {}}
+            idProduct={rowData.id}
+            deleteExcludedProduct={columnData.deleteExcludedProduct}
             onClose={onClose}
             isLoading={false}
           />

@@ -2,11 +2,13 @@ import ButtonCustom from "@/components/Button/ButtonCustom";
 import { ModalBody, ModalFooter } from "@nextui-org/react";
 
 const ModalEliminarProductoExcluido = ({
-  onHandleDisabled,
+  idProduct,
+  deleteExcludedProduct,
   onClose,
   isLoading,
 }: {
-  onHandleDisabled: () => void;
+  idProduct: number;
+  deleteExcludedProduct: (idProduct: number) => Promise<void>;
   onClose: () => void;
   isLoading: boolean;
 }) => {
@@ -38,10 +40,11 @@ const ModalEliminarProductoExcluido = ({
         <ButtonCustom
           title="Eliminar"
           onClick={() => {
-            onHandleDisabled();
+            deleteExcludedProduct(idProduct);
             onClose();
           }}
           className="w-44 text-sm font-semibold justify-center bg-greenSecondaryButton text-white rounded-sm"
+          isDisabled={isLoading}
         />
       </ModalFooter>
     </div>

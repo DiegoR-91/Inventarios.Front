@@ -119,7 +119,7 @@ const DetalleRevisionWFCeroTable = <T,>({
                           key={cell.id}
                           className="py-3 px-1 justify-center items-center"
                           style={{
-                            ...getCommonPinningStyles(column, "researching"),
+                            ...getCommonPinningStyles(column, "diffAdjust"),
                           }}
                         >
                           {flexRender(

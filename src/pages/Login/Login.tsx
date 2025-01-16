@@ -4,8 +4,13 @@ import LogoCMPC from "@/assets/images/LogoCMPC.png";
 import InventoryLogin from "@/assets/images/logoInventory.png";
 import LogoAzure from "@/assets/images/Azure.svg";
 import InputCustom from "@/components/Input/InputCustom";
+import { Spinner } from "@nextui-org/react";
+import useLoginNoSaml from "@/hooks/useLoginNoSaml";
+
+const AMBIENT: string = import.meta.env.VITE_REACT_APP_AMBIENT;
 
 const Login = () => {
+  const { mutateAsync: loginNoSaml, isPending } = useLoginNoSaml();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -61,11 +66,24 @@ const Login = () => {
                   INGRESAR
                 </button>
               </form>
-              <div className="flex items-center gap-2">
-                <p className="text-xs text-black/30">No puedo ingresar. </p>
-                <span className="text-xs underline decoration-solid text-greenPrimaryButton">
-                  Ver posibles causas y soluciones
-                </span>
+              <div className="flex flex-col gap-4">
+                <div className="flex  items-center gap-2">
+                  <p className="text-xs text-black/30">No puedo ingresar. </p>
+                  <span className="text-xs underline decoration-solid text-greenPrimaryButton">
+                    Ver posibles causas y soluciones
+                  </span>
+                </div>
+                <div>
+                  {AMBIENT === "qa" && (
+                    <a
+                      className="flex gap-2 bg-white shadow-md shadow-gray-800 hover:border-white hover:scale-105 transition-all w-80 h-10 justify-center items-center  rounded-md font-bold text-gray-500 cursor-pointer"
+                      onClick={() => loginNoSaml()}
+                    >
+                      Ingresar con email
+                      {isPending && <Spinner />}
+                    </a>
+                  )}
+                </div>
               </div>
               <div className="flex flex-col pt-10">
                 <hr />

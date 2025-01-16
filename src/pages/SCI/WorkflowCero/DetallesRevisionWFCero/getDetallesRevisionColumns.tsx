@@ -43,7 +43,7 @@ const getDetallesRevisionColumns = () => {
       maxSize: 60,
       cell: InputCheckTable,
     },
-    {
+    /*     {
       header: "Investigar",
       accessorKey: "researching",
       meta: { type: "text", sticky: "left" },
@@ -51,6 +51,22 @@ const getDetallesRevisionColumns = () => {
       minSize: 90,
       maxSize: 90,
       cell: InputCheckTable,
+    }, */
+    {
+      header: "Dif.",
+      accessorKey: "dif",
+      meta: { type: "text", sticky: "left" },
+      size: 100,
+      minSize: 100,
+      maxSize: 100,
+    },
+    {
+      header: "Dif. Ajust",
+      accessorKey: "diffAdjust",
+      meta: { type: "text", sticky: "left" },
+      size: 100,
+      minSize: 100,
+      maxSize: 100,
     },
     {
       header: "Jefe de Area",
@@ -68,7 +84,7 @@ const getDetallesRevisionColumns = () => {
       meta: { type: "text" },
     },
     {
-      header: "En proceso",
+      header: "ID proceso",
       accessorKey: "inProcess",
       meta: { type: "text" },
     },
@@ -112,16 +128,7 @@ const getDetallesRevisionColumns = () => {
       accessorKey: "inventoryM3",
       meta: { type: "text" },
     },
-    {
-      header: "Dif.",
-      accessorKey: "dif",
-      meta: { type: "text" },
-    },
-    {
-      header: "Dif. Ajust",
-      accessorKey: "diffAdjust",
-      meta: { type: "text" },
-    },
+
     {
       header: "Ja. ap",
       accessorKey: "jaAp",

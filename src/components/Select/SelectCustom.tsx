@@ -1,14 +1,22 @@
 import { SelectOptions } from "@/interfaces/commons";
 import { cn } from "@/utils/cn";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface SelectCustomProps {
   options: SelectOptions[];
-  onSelect: (value: string | number) => void;
+  onSelect?: (value: string | number) => void;
+  onFullOptionSelect?: (value: SelectOptions) => void;
   className?: string;
+  fullOptionSelected?: boolean;
 }
 
-const SelectCustom = ({ options, onSelect, className }: SelectCustomProps) => {
+const SelectCustom = ({
+  options,
+  onSelect,
+  className,
+  fullOptionSelected,
+  onFullOptionSelect,
+}: SelectCustomProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState<SelectOptions | null>(
     null
@@ -19,7 +27,11 @@ const SelectCustom = ({ options, onSelect, className }: SelectCustomProps) => {
 
   const handleSelect = (option: SelectOptions) => {
     setSelectedOption(option);
-    onSelect(option.value);
+    if (fullOptionSelected) {
+      onFullOptionSelect && onFullOptionSelect(option);
+    } else {
+      onSelect && onSelect(option.value);
+    }
   };
 
   const handleConfirm = () => {
@@ -28,13 +40,19 @@ const SelectCustom = ({ options, onSelect, className }: SelectCustomProps) => {
     }
   };
 
+  useEffect(() => {
+    setSelectedOption(null);
+  }, [options]);
+
   return (
     <div className={cn("relative", className)}>
       <button
         onClick={handleToggle}
         className="w-full bg-white text-black border-2 border-black/30 rounded-md pl-3 pr-10 py-1 text-left cursor-pointer focus:outline-none truncate"
       >
-        {selectedOption ? selectedOption.label : options[0].label}
+        {selectedOption
+          ? selectedOption.label
+          : /* options[0].label */ "Seleccionar"}
         <span className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
           <svg
             className="h-5 w-5 text-black"
@@ -59,7 +77,7 @@ const SelectCustom = ({ options, onSelect, className }: SelectCustomProps) => {
                   key={option.value}
                   className={`w-full justify-start cursor-pointer select-none relative text-sm py-1 ${
                     selectedOption && selectedOption.value === option.value
-                      ? "bg-greenButton text-white rounded-sm"
+                      ? "bg-greenSecondaryButton text-white rounded-sm"
                       : "text-black/60"
                   }`}
                   onClick={() => {

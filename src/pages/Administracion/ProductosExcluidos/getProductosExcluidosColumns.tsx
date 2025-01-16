@@ -1,13 +1,19 @@
 import { ColumnDef } from "@tanstack/react-table";
 import ActionsProductosExcuidosInput from "./components/ActionsProductosExcuidosInput";
+import {
+  IExcludedProduct,
+  IProductosExcluidosApi,
+} from "@/api/interfaces/Administracion/productosExcluidosInterfaces";
 
-const getProductosExcluidosColumns = () => {
-  const tableColumns: ColumnDef<any>[] = [
+const getProductosExcluidosColumns = (
+  deleteExcludedProduct: (idProduct: number) => Promise<IProductosExcluidosApi>
+) => {
+  const tableColumns: ColumnDef<IExcludedProduct>[] = [
     {
       header: "Acciones",
       accessorKey: "acciones",
       cell: ActionsProductosExcuidosInput,
-      meta: { type: "text", isAdmin: true },
+      meta: { type: "text", isAdmin: true, deleteExcludedProduct },
     },
     {
       header: "Código",
@@ -16,7 +22,7 @@ const getProductosExcluidosColumns = () => {
     },
     {
       header: "Nombre del Producto",
-      accessorKey: "productName",
+      accessorKey: "glosa",
       meta: { type: "text" },
     },
   ];

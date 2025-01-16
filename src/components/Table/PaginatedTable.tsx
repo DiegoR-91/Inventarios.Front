@@ -123,12 +123,12 @@ const PaginatedTable = <T,>({
         <div className="relative flex w-full  justify-start items-center gap-5 p-5 bg-white">
           <Pagination
             showControls
-            total={data?.totalPages}
+            total={Math.ceil(data?.totalPages / rowSize)}
             initialPage={1}
             onChange={(page) => {
               table.setPageIndex(page);
             }}
-            classNames={{ cursor: "bg-greenButton" }}
+            classNames={{ cursor: "bg-greenActiveRowTable" }}
             size="sm"
           />
           <div className="flex">

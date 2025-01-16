@@ -1,7 +1,12 @@
 import { keepPreviousData, useQuery } from "@tanstack/react-query";
 import { ColumnSort, SortingState } from "@tanstack/react-table";
 import { QueryPaginatedProps } from "@/interfaces/commons";
-import { productosExcluidosDataMock } from "@/utils/dataMock";
+import {
+  IExcludedProductsList,
+  IProductosExcluidosListApi,
+} from "@/api/interfaces/Administracion/productosExcluidosInterfaces";
+import instanceApi from "@/services/instanceApi";
+import { productosExcluidosAdapter } from "@/api/adapters/Administracion/productosExcluidosAdapter";
 
 interface IGetProductosExcluidos extends QueryPaginatedProps {
   filters?: any;
@@ -13,19 +18,18 @@ export const getProductosExcluidos = async ({
   sorting,
   filters,
 }: IGetProductosExcluidos) => {
-  /*   const res = await instanceApi.get<IRecentsApplicationsListApi>(
-    `/Formulario/ListarSolicitudes`,
+  const res = await instanceApi.post<IProductosExcluidosListApi>(
+    `/AdmProductosExc/Listar`,
     {
-      params: {
+      listar: {
         Pagina: page,
         CantidadRegistros: cantidadRegistros,
-        ...filtersFormated,
+        ...filters,
       },
     }
   );
 
-  const data = recentApplicationsAdapter(res.data.lista); */
-  const data = productosExcluidosDataMock;
+  const data = productosExcluidosAdapter(res.data.lista);
 
   if (sorting.length) {
     const sort = sorting[0] as ColumnSort;
@@ -41,16 +45,15 @@ export const getProductosExcluidos = async ({
     });
   }
 
-  const hasNextPage = true;
-  const previusPage = false;
-  const totalPages = 10;
-  const totalItems = 100;
+  const hasNextPage = res.data.pagSiguiente !== null;
+  const previusPage = res.data.pagPrevia !== null;
+  const totalPages = res.data.total;
 
-  const usersList: any = {
+  const usersList: IExcludedProductsList = {
     nextPage: hasNextPage ? page + 1 : null,
     previusPage: previusPage ? page - 1 : null,
     results: data,
-    totalItems,
+    totalItems: res.data.total,
     totalPages,
   };
 
@@ -65,7 +68,7 @@ const useGetProductosExcluidos = (
 ) => {
   return useQuery({
     queryKey: [
-      "users",
+      "excludedProducts",
       sorting,
       pagination.pageIndex,
       cantidadRegistros,

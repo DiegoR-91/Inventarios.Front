@@ -5,10 +5,10 @@ import { useState } from "react";
 import { PaginationState, SortingState } from "@tanstack/react-table";
 import useGetProductosExcluidos from "./hooks/useGetProductosExcluidos";
 import Loading from "@/components/Loading/Loading";
-
-const tableColumnsProductosExcluidos = getProductosExcluidosColumns();
+import useEliminarProductoExcluido from "./hooks/useEliminarProductoExcluido";
 
 const ProductosExcluidos = () => {
+  const [filters, setFilters] = useState<any>();
   const [sorting, setSorting] = useState<SortingState>([]);
   const [pagination, setPagination] = useState<PaginationState>({
     pageIndex: 1,
@@ -18,8 +18,15 @@ const ProductosExcluidos = () => {
   const { data, isLoading } = useGetProductosExcluidos(
     sorting,
     pagination,
-    rowSize
+    rowSize,
+    filters
   );
+  const { mutateAsync: mutateEliminarProductoExcluido } =
+    useEliminarProductoExcluido();
+  const tableColumnsProductosExcluidos = getProductosExcluidosColumns(
+    mutateEliminarProductoExcluido
+  );
+
   if (isLoading)
     return (
       <div className="flex justify-center items-center">
@@ -31,7 +38,7 @@ const ProductosExcluidos = () => {
   return (
     <div className="flex w-full h-full pt-5">
       <div className="flex flex-col w-full h-full">
-        <FiltrosProductosExcluidos />
+        <FiltrosProductosExcluidos setFilters={setFilters} />
         <div className="pt-5">
           <PaginatedTable
             columns={tableColumnsProductosExcluidos}
